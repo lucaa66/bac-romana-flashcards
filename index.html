@@ -395,7 +395,7 @@
       // --- IONA ---
       { text: "Iona - Marin Sorescu", opera: "Iona", images: ["iona-sorescu.jpeg"] },
       { text: "Iona - Încadrare în specia literară parabolă dramatică. Trăsături ale teatrului expresionist, absurd, neomodernist", opera: "Iona", images: ["iona-parabola.jpeg"] },
-      { text: "Iona - 3 niveluri tematice", opera: "Iona", images: ["iona-tema.jpeg"] },
+      { text: "Iona - 3 leveluri tematice", opera: "Iona", images: ["iona-tema.jpeg"] },
       { text: "Iona - 2 scene relevante", opera: "Iona", images: ["iona-scene.jpeg"] },
       { text: "Iona - Titlu", opera: "Iona", images: ["iona-titlu.jpeg"] },
       { text: "Iona - Conflictul interior", opera: "Iona", images: ["iona-conflicte.jpeg"] },
@@ -664,7 +664,12 @@
     randomButton.addEventListener("click", chooseRandomQuestion);
 
     createAllQuestionsView();
-    loadQuestion(0);
+    
+    // Aici s-a modificat: alege o întrebare aleatorie chiar de la inițializare
+    if (questions.length > 0) {
+      const initialRandomIndex = Math.floor(Math.random() * questions.length);
+      loadQuestion(initialRandomIndex);
+    }
   </script>
 </body>
 </html>
